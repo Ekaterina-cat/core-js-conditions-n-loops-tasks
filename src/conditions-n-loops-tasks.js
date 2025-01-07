@@ -69,8 +69,15 @@ function getMaxNumber(a, b, c) {
  * {x: 1, y: 1}, {x: 2, y: 8} => false
  * {x: 1, y: 1}, {x: 2, y: 8} => false
  */
-function canQueenCaptureKing(/* queen, king */) {
-  throw new Error('Not implemented');
+function canQueenCaptureKing(queen, king) {
+  if (
+    queen.x === king.x ||
+    queen.y === king.y ||
+    Math.abs(queen.x - king.x) === Math.abs(queen.y - king.y)
+  ) {
+    return true;
+  }
+  return false;
 }
 
 /**
@@ -91,8 +98,15 @@ function canQueenCaptureKing(/* queen, king */) {
  *  2, 2, 5   => false
  *  3, 0, 3   => false
  */
-function isIsoscelesTriangle(/* a, b, c */) {
-  throw new Error('Not implemented');
+function isIsoscelesTriangle(a, b, c) {
+  if (
+    (a === b && c !== 0 && c < a + b) ||
+    (a === c && b !== 0 && b < a + c) ||
+    (c === b && a !== 0 && a < c + b)
+  ) {
+    return true;
+  }
+  return false;
 }
 
 /**
@@ -314,8 +328,45 @@ function getBalanceIndex(/* arr */) {
  *          [10, 9,  8,  7]
  *        ]
  */
-function getSpiralMatrix(/* size */) {
-  throw new Error('Not implemented');
+function getSpiralMatrix(size) {
+  const matrix = [];
+  let count = 0;
+  let firstX = 0;
+  let lastX = size - 1;
+  let firstY = 0;
+  let lastY = size - 1;
+  for (let i = 0; i < size; i += 1) {
+    matrix[i] = [];
+    for (let j = 0; j < size; j += 1) {
+      matrix[i][j] = 0;
+    }
+  }
+  while (firstX <= lastX && firstY <= lastY) {
+    for (let i = firstY; i <= lastY; i += 1) {
+      count += 1;
+      matrix[firstX][i] = count;
+    }
+    firstX += 1;
+
+    for (let i = firstX; i <= lastX; i += 1) {
+      count += 1;
+      matrix[i][lastY] = count;
+    }
+    lastY -= 1;
+
+    for (let i = lastY; i >= firstY; i -= 1) {
+      count += 1;
+      matrix[lastX][i] = count;
+    }
+    lastX -= 1;
+
+    for (let i = lastX; i >= firstX; i -= 1) {
+      count += 1;
+      matrix[i][firstY] = count;
+    }
+    firstY += 1;
+  }
+  return matrix;
 }
 
 /**
