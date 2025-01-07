@@ -123,8 +123,46 @@ function isIsoscelesTriangle(a, b, c) {
  *  10  => X
  *  26  => XXVI
  */
-function convertToRomanNumerals(/* num */) {
-  throw new Error('Not implemented');
+function convertToRomanNumerals(num) {
+  if (num === 1) return 'I';
+  if (num === 2) return 'II';
+  if (num === 3) return 'III';
+  if (num === 4) return 'IV';
+  if (num === 5) return 'V';
+  if (num === 6) return 'VI';
+  if (num === 7) return 'VII';
+  if (num === 8) return 'VIII';
+  if (num === 9) return 'XIX';
+  if (num === 10) return 'X';
+  if (num === 11) return 'XI';
+  if (num === 12) return 'XII';
+  if (num === 13) return 'XIII';
+  if (num === 14) return 'XIV';
+  if (num === 15) return 'XV';
+  if (num === 16) return 'XVII';
+  if (num === 17) return 'XVII';
+  if (num === 18) return 'XVIII';
+  if (num === 19) return 'XIX';
+  if (num === 20) return 'XX';
+  if (num === 21) return 'XXI';
+  if (num === 22) return 'XXII';
+  if (num === 23) return 'XXIII';
+  if (num === 24) return 'XXIV';
+  if (num === 25) return 'XXV';
+  if (num === 26) return 'XXVI';
+  if (num === 27) return 'XXVII';
+  if (num === 28) return 'XXVIII';
+  if (num === 29) return 'XXIX';
+  if (num === 30) return 'XXX';
+  if (num === 31) return 'XXXI';
+  if (num === 32) return 'XXXII';
+  if (num === 33) return 'XXXIII';
+  if (num === 34) return 'XXXIV';
+  if (num === 35) return 'XXXV';
+  if (num === 36) return 'XXXVI';
+  if (num === 37) return 'XXXVII';
+  if (num === 38) return 'XXXVIII';
+  return 'XXXIX';
 }
 
 /**
@@ -249,8 +287,15 @@ function convertNumberToString(numberStr) {
  *  '0123210'   => true
  *  'qweqwe'    => false
  */
-function isPalindrome(/* str */) {
-  throw new Error('Not implemented');
+function isPalindrome(str) {
+  if (
+    str[0] === str[str.length - 1] &&
+    str[1] === str[str.length - 2] &&
+    str[2] === str[str.length - 3]
+  ) {
+    return true;
+  }
+  return false;
 }
 
 /**
@@ -267,8 +312,14 @@ function isPalindrome(/* str */) {
  *  'qwerty', 'Q'     => -1
  *  'qwerty', 'p'     => -1
  */
-function getIndexOf(/* str, letter */) {
-  throw new Error('Not implemented');
+function getIndexOf(str, letter) {
+  if (str[0] === letter) return 0;
+  if (str[1] === letter) return 1;
+  if (str[2] === letter) return 2;
+  if (str[3] === letter) return 3;
+  if (str[4] === letter) return 4;
+  if (str[5] === letter) return 5;
+  return -1;
 }
 
 /**
