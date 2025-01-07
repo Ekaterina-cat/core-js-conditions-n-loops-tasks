@@ -21,8 +21,11 @@
  *  0  => true
  *  -5 => false
  */
-function isPositive(/* number */) {
-  throw new Error('Not implemented');
+function isPositive(number) {
+  if (number >= 0) {
+    return true;
+  }
+  return false;
 }
 
 /**
@@ -38,8 +41,14 @@ function isPositive(/* number */) {
  *  -5, 0, 5      => 5
  *  -0.1, 0, 0.2  => 0.2
  */
-function getMaxNumber(/* a, b, c */) {
-  throw new Error('Not implemented');
+function getMaxNumber(a, b, c) {
+  if (a > b && a > c) {
+    return a;
+  }
+  if (b > a && b > c) {
+    return b;
+  }
+  return c;
 }
 
 /**
@@ -119,8 +128,99 @@ function convertToRomanNumerals(/* num */) {
  *  '10,5'    => 'one zero point five'
  *  '1950.2'  => 'one nine five zero point two'
  */
-function convertNumberToString(/* numberStr */) {
-  throw new Error('Not implemented');
+function convertNumberToString(numberStr) {
+  let resultStr = '';
+  for (let i = 0; i < numberStr.length; i += 1) {
+    switch (numberStr[i]) {
+      case '0':
+        resultStr += 'zero';
+        if (i !== numberStr.length - 1) {
+          resultStr += ' ';
+        }
+        break;
+      case '1':
+        resultStr += 'one';
+        if (i !== numberStr.length - 1) {
+          resultStr += ' ';
+        }
+        break;
+      case '2':
+        resultStr += 'two';
+        if (i !== numberStr.length - 1) {
+          resultStr += ' ';
+        }
+        break;
+      case '3':
+        resultStr += 'three';
+        if (i !== numberStr.length - 1) {
+          resultStr += ' ';
+        }
+        break;
+      case '4':
+        resultStr += 'four';
+        if (i !== numberStr.length - 1) {
+          resultStr += ' ';
+        }
+        break;
+      case '5':
+        resultStr += 'five';
+        if (i !== numberStr.length - 1) {
+          resultStr += ' ';
+        }
+        break;
+      case '6':
+        resultStr += 'six';
+        if (i !== numberStr.length - 1) {
+          resultStr += ' ';
+        }
+        break;
+      case '7':
+        resultStr += 'seven';
+        if (i !== numberStr.length - 1) {
+          resultStr += ' ';
+        }
+        break;
+      case '8':
+        resultStr += 'eight';
+        if (i !== numberStr.length - 1) {
+          resultStr += ' ';
+        }
+        break;
+      case '9':
+        resultStr += 'nine';
+        if (i !== numberStr.length - 1) {
+          resultStr += ' ';
+        }
+        break;
+      case '-':
+        resultStr += 'minus';
+        if (i !== numberStr.length - 1) {
+          resultStr += ' ';
+        }
+        break;
+      case '+':
+        resultStr += 'plus';
+        if (i !== numberStr.length - 1) {
+          resultStr += ' ';
+        }
+        break;
+      case '.':
+        resultStr += 'point';
+        if (i !== numberStr.length - 1) {
+          resultStr += ' ';
+        }
+        break;
+      case ',':
+        resultStr += 'point';
+        if (i !== numberStr.length - 1) {
+          resultStr += ' ';
+        }
+        break;
+      default:
+        break;
+    }
+  }
+  return resultStr;
 }
 
 /**
